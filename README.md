@@ -23,8 +23,9 @@ Javascript, React, Node, Bootstrap, Axios
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
-Time Estimates
-For each of the lab features, make an estimate of the time it will take you to complete the feature, and record your start and finish times for that feature:
+Web Request Response Cycle - Collaborated with [Brady Davenport](https://github.com/bradydavenport)
+
+## Time Estimates
 
 Name of feature: Added the ability to fetch api data
 
