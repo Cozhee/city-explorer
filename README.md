@@ -1,5 +1,5 @@
 # City Explorer
-https://miro.com/app/board/uXjVO0D85Nc=/?share_link_id=453176391884
+
 
 **Author**: Your Name Goes Here
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
@@ -23,7 +23,9 @@ Javascript, React, Node, Bootstrap, Axios
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+https://miro.com/app/board/uXjVO0D85Nc=/?share_link_id=453176391884
 Web Request Response Cycle - Collaborated with [Brady Davenport](https://github.com/bradydavenport)
+
 
 ## Time Estimates
 
