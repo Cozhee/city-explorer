@@ -3,11 +3,13 @@ import Search from './components/Search.js'
 import Display from './components/Display.js'
 import Warning from './components/Warning.js'
 import Weather from './components/Weather.js'
+import Movie from './components/Movie.js'
 import './App.css';
 import {Container} from "react-bootstrap";
 
 import WeatherAPI from "./apis/WeatherAPI";
 import CityAPI from "./apis/CityAPI";
+import MovieAPI from "./apis/MovieAPI";
 
 class App extends React.Component{
 
@@ -21,6 +23,8 @@ class App extends React.Component{
       errors: false,
       errorMessage: null,
       weather: [],
+      moveList: [],
+      hasMovies: false
     }
   }
 
@@ -40,7 +44,6 @@ class App extends React.Component{
     const city = this.state.cityName
 
     try {
-
       const cityData = await CityAPI.get('', {
         params: {
           city: city,
@@ -48,32 +51,36 @@ class App extends React.Component{
         },
       })
 
-      console.log(cityData.data[0])
-
       const latitude = cityData.data[0].lat
       const longitude = cityData.data[0].lon
 
+      const cityMap = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_API_KEY}&center=${latitude},${longitude}&zoom=12`
 
       const theData = await WeatherAPI.get('', {
         params: {
-          city: city,
           lat: latitude,
           lon: longitude
         }
       })
 
-      console.log(theData)
+      const movieList = await MovieAPI.get('', {
+        params: {
+          city: city
+        }
+      })
 
-
-      const cityMap = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_API_KEY}&center=${latitude},${longitude}&zoom=12`
-
+      console.log(movieList)
       this.setState({
         lon: longitude,
         lat: latitude,
         map: cityMap,
         cityName: city,
-        weather: theData.data
+        weather: theData.data,
+        movieList: movieList.data,
+        hasMovies: true
       })
+
+
     } catch(err) {
       this.setState({
         errors: true,
@@ -109,18 +116,15 @@ class App extends React.Component{
       weather = <Weather forcast={this.state.weather}/>
     }
 
-
     return (
       <>
         <Search updateCityName={this.updateCityName} getCityData={this.getCityData}/>
         <Container style={{ display: 'flex', justifyContent: 'center' }}>
           {item}
-
-
         </Container>
         {weather}
+        {this.state.hasMovies && <Movie movieList={this.state.movieList}/>}
       </>
-
     )
   }
 }
