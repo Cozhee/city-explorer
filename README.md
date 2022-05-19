@@ -24,7 +24,7 @@ Javascript, React, Node, Bootstrap, Axios
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 WRRC - Colab with [Ben] (https://github.com/bc0351)
-![lab07](https://user-images.githubusercontent.com/55909913/169186039-492b48e4-7664-49d1-8b4b-9fd1b06ec6d2.png)
+![Screen Shot 2022-05-18 at 2 34 42 PM](https://user-images.githubusercontent.com/55909913/169186329-7657fd73-821d-468b-8db9-4a593f298a79.png)
 
 
 https://miro.com/app/board/uXjVO0D85Nc=/?share_link_id=453176391884
