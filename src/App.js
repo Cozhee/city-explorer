@@ -69,7 +69,6 @@ class App extends React.Component{
         }
       })
 
-      console.log(movieList)
       this.setState({
         lon: longitude,
         lat: latitude,
@@ -79,7 +78,6 @@ class App extends React.Component{
         movieList: movieList.data,
         hasMovies: true
       })
-
 
     } catch(err) {
       this.setState({
