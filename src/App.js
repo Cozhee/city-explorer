@@ -3,7 +3,7 @@ import Search from './components/Search.js'
 import Display from './components/Display.js'
 import Warning from './components/Warning.js'
 import Weather from './components/Weather.js'
-import Movie from './components/Movie.js'
+import Movies from './components/Movies.js'
 import './App.css';
 import {Container} from "react-bootstrap";
 
@@ -121,7 +121,7 @@ class App extends React.Component{
           {item}
         </Container>
         {weather}
-        {this.state.hasMovies && <Movie movieList={this.state.movieList}/>}
+        {this.state.hasMovies && <Movies movieList={this.state.movieList}/> }
       </>
     )
   }
